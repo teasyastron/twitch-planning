@@ -1,10 +1,40 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
 import Card from './Card'; // Ensure Card is correctly imported
 import { TbScreenshot } from "react-icons/tb";
 
-
 const Home = () => {
+  const initialCardState = {
+    day: 'monday',
+    time: '9 PM',
+    game: 'phasmophobia',
+    stream: true,
+    more: false,
+    bgmore: 'purple',
+    textmore: 'What are you doing on stream?',
+  };
+
+  const [cards, setCards] = useState(Array(7).fill().map(() => ({
+    info: initialCardState,
+    isHovered: false
+  })));
+
+  const handleMouseEnter = (index) => {
+    setCards(prevCards => prevCards.map((card, i) => i === index ? { ...card, isHovered: true } : card));
+  };
+
+  const handleMouseLeave = (index) => {
+    setCards(prevCards => prevCards.map((card, i) => i === index ? { ...card, isHovered: false } : card));
+  };
+
+  const handleChange = (index, e) => {
+    const { name, value } = e.target;
+    setCards(prevCards => prevCards.map((card, i) => i === index ? { 
+      ...card, 
+      info: { ...card.info, [name]: value }
+    } : card));
+  };
+
   const divRef = useRef();
 
   const handleExportAsPng = () => {
@@ -34,13 +64,16 @@ const Home = () => {
         <h1 className="text-2xl font-bold">Streaming Schedule</h1>
         <p className="mt-2">This is the home page content.</p>
         <div className="grid grid-cols-4 grid-rows-2 gap-4 min-h-screen p-4">
-          <Card day="monday" time="9 PM" game="phasmophobia" stream={true}/>
-          <Card day="tuesday" time="9 PM" game="fortnite" stream={false} />
-          <Card day="wednesday" time="9 PM" game="manofmedan" stream={true}/>
-          <Card day="sunday" time="9 PM" sunday={true} game="fortnite" stream={true}/>
-          <Card day="thursday" time="9 PM" game="fortnite" stream={true}/>
-          <Card day="friday" time="9 PM" game="fortnite" stream={true}/>
-          <Card day="saturday" time="9 PM" game="fortnite" stream={true}/>
+            {cards.map((card, index) => (
+            <Card
+              key={index}
+              cardInfo={card.info}
+              isHovered={card.isHovered}
+              handleMouseEnter={() => handleMouseEnter(index)}
+              handleMouseLeave={() => handleMouseLeave(index)}
+              handleChange={(e) => handleChange(index, e)}
+            />
+          ))}
         </div>
       </div>
     </div>
