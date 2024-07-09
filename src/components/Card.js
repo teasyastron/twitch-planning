@@ -1,14 +1,19 @@
 import React from 'react';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
+import { FaVideoSlash } from "react-icons/fa";
+import offline from "../img/games/offline.jfif"
 
 
-const Card = ({ sunday, day, time }) => {
+const Card = ({ sunday, day, time, game, stream}) => {
+  const bg = require(`../img/games/${game}/bg.png`);
+  const logo = require(`../img/games/${game}/logo.png`);
+
   return (
     <div className={`relative rounded-xl overflow-hidden ${sunday ? 'row-span-2' : ''}`}>
       <div className="absolute inset-0">
         <img
-          src="https://cdn2.unrealengine.com/c5s3-download-keyart-1920x1080-f10cd00cc9ad.jpg"
+          src={stream ? bg : offline}
           alt="Background"
           className="w-full h-full object-cover"
         />
@@ -18,15 +23,22 @@ const Card = ({ sunday, day, time }) => {
           <span className="text-xl"><FaCalendarAlt /></span>
           {day}
         </h1>
-        <p className="text-lg flex items-baseline gap-2">
-          <span className="text-sm bottom-1"><FaClock /></span>
-          {time}
-        </p>
+        {stream ? 
+                <p className="text-lg flex items-baseline gap-2">
+                <span className="text-sm bottom-1"><FaClock /></span>
+                {time}
+              </p>
+              : ''}
+
         <div className='h-1/2 flex flex-col justify-center items-center'>
+        {stream ? 
           <img 
-            src="https://www.edigitalagency.com.au/wp-content/uploads/fortnite-logo-white-png.png"
+            src={logo}
             className="w-5/6"
           />
+        : <span className='text-5xl mt-16'><FaVideoSlash /></span>
+        }
+
         </div>
       </div>
     </div>
