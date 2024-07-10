@@ -2,7 +2,13 @@ import React from 'react';
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 import { FaVideoSlash } from "react-icons/fa";
-import { IoMdInformationCircle } from "react-icons/io";
+import { FaVideo } from "react-icons/fa";
+import { IoGameController } from "react-icons/io5";
+import { FaLightbulb } from "react-icons/fa";
+import { FaPaintRoller } from "react-icons/fa";
+import { MdShortText } from "react-icons/md";
+
+
 import offline from "../img/games/offline.jfif"
 
 const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleChange }) => {
@@ -58,13 +64,13 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
       {isHovered && (
         <div className="absolute top-0 left-0 p-4 bg-zinc-950 rounded-xl shadow-lg text-gray-300 h-full w-full">
           <form>
-            <div>
-              <label>Day:</label>
+            <div className='flex gap-2 mb-4 hidden'>
+              <label className='flex gap-1 items-center uppercase font-semibold'><FaCalendarAlt /> Day</label>
               <select 
                 name="day" 
                 value={cardInfo.day} 
                 onChange={handleChange}
-                className="border p-1"
+                className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               >
                 <option value="monday">Monday</option>
                 <option value="tuesday">Tuesday</option>
@@ -75,36 +81,70 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
                 <option value="sunday">Sunday</option>
               </select>
             </div>
-            <div>
-              <label>Time:</label>
+            <div className='flex gap-2 mb-4'>
+              <label className='flex gap-1 items-center uppercase font-semibold'><FaClock />Time</label>
               <input 
                 type="text" 
                 name="time" 
                 value={cardInfo.time} 
                 onChange={handleChange}
-                className="border p-1"
+                className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               />
             </div>
-            <div>
-              <label>Game:</label>
+            <div className='flex gap-2 mb-4'>
+              <label className='flex gap-1 items-center uppercase font-semibold'><IoGameController />Game</label>
               <select 
                 name="game" 
                 value={cardInfo.game} 
                 onChange={handleChange}
-                className="border p-1"
+                className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               >
                 <option value="phasmophobia">Phasmophobia</option>
                 <option value="fortnite">Fortnite</option>
                 <option value="manofmedan">Man of Medan</option>
               </select>
             </div>
-            <div>
-              <label>Stream:</label>
+            <div className='flex gap-4'>
+              <div className='flex gap-2 mb-4'>
+                <label className='flex gap-1 items-center uppercase font-semibold'><FaVideo />Stream</label>
+                <input 
+                  type="checkbox" 
+                  name="stream" 
+                  checked={cardInfo.stream} 
+                  onChange={(e) => handleChange({ target: { name: 'stream', value: e.target.checked }})}
+                />
+              </div>
+              <div className='flex gap-2 mb-4'>
+                <label className='flex gap-1 items-center uppercase font-semibold'><FaLightbulb />More info</label>
+                <input 
+                  type="checkbox" 
+                  name="more" 
+                  checked={cardInfo.more} 
+                  onChange={(e) => handleChange({ target: { name: 'more', value: e.target.checked }})}
+                />
+              </div>
+            </div>
+            <div className='flex gap-2 mb-4'>
+              <label className='flex gap-1 items-center uppercase font-semibold'><FaPaintRoller />Background</label>
+              <select 
+                name="bgmore" 
+                value={cardInfo.bgmore} 
+                onChange={handleChange}
+                className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
+              >
+                <option value="purple">Purple</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+              </select>
+            </div>
+            <div className='flex gap-2 mb-4'>
+              <label className='flex gap-1 items-center uppercase font-semibold'><MdShortText />Label</label>
               <input 
-                type="checkbox" 
-                name="stream" 
-                checked={cardInfo.stream} 
-                onChange={(e) => handleChange({ target: { name: 'stream', value: e.target.checked }})}
+                type="text" 
+                name="textmore" 
+                value={cardInfo.textmore} 
+                onChange={handleChange}
+                className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               />
             </div>
           </form>

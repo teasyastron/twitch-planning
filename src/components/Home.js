@@ -8,14 +8,19 @@ const Home = () => {
     day: 'monday',
     time: '9 PM',
     game: 'phasmophobia',
-    stream: true,
+    stream: false,
     more: false,
     bgmore: 'purple',
     textmore: 'What are you doing on stream?',
   };
 
-  const [cards, setCards] = useState(Array(7).fill().map(() => ({
-    info: initialCardState,
+  const days = ['monday', 'tuesday', 'wednesday', 'sunday', 'thursday', 'friday', 'saturday'];
+  const [header, setHeader] = useState("Streaming Schedule __/__/___");
+  const [paragraph, setParagraph] = useState("Quick description of the activities this week.");
+
+
+  const [cards, setCards] = useState(days.map((day) => ({
+    info: { ...initialCardState, day },
     isHovered: false
   })));
 
@@ -33,6 +38,14 @@ const Home = () => {
       ...card, 
       info: { ...card.info, [name]: value }
     } : card));
+  };
+
+  const handleHeaderChange = (e) => {
+    setHeader(e.target.innerText);
+  };
+
+  const handleParagraphChange = (e) => {
+    setParagraph(e.target.innerText);
   };
 
   const divRef = useRef();
@@ -61,8 +74,22 @@ const Home = () => {
         Export your schedule!
       </button>
       <div ref={divRef} className="bg-gradient-to-r from-yellow-300 to-amber-200 rounded-xl p-4 text-zinc-950">
-        <h1 className="text-2xl font-bold">Streaming Schedule</h1>
-        <p className="mt-2">This is the home page content.</p>
+      <h1 
+          className="text-2xl font-bold hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl text-center" 
+          contentEditable
+          suppressContentEditableWarning={true}
+          onBlur={handleHeaderChange}
+        >
+          {header}
+        </h1>
+        <p 
+          className="mt-2 hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl text-center" 
+          contentEditable
+          suppressContentEditableWarning={true}
+          onBlur={handleParagraphChange}
+        >
+          {paragraph}
+        </p>
         <div className="grid grid-cols-4 grid-rows-2 gap-4 min-h-screen p-4">
             {cards.map((card, index) => (
             <Card
