@@ -2,9 +2,6 @@ import React, { useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
 import Card from './Card'; // Ensure Card is correctly imported
 import { TbScreenshot } from "react-icons/tb";
-import { FaTwitch } from "react-icons/fa";
-import { FaDiscord } from "react-icons/fa6";
-
 
 const Home = () => {
   const initialCardState = {
@@ -71,42 +68,28 @@ const Home = () => {
   };
 
   return (
-    <div className="p-4">
+    <div>
       <button onClick={handleExportAsPng} className="p-2 bg-purple-600 text-white rounded-tr-xl rounded-bl-xl absolute right-4 gap-2 items-center justify-center font-semibold flex text-xs uppercase opacity-75 hover:opacity-100 transition duration-250">
         <TbScreenshot />
         Export your schedule!
       </button>
-      <div ref={divRef} className="bg-gradient-to-r from-yellow-300 to-amber-200 rounded-xl p-4 text-zinc-950">
-        <div className='flex items-center justify-between'>
-          <div>
-            <h1 
-              className="text-5xl font-bold lowercase hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl transition duration-250" 
-              contentEditable
-              suppressContentEditableWarning={true}
-              onBlur={handleHeaderChange}
-            >
-              {header}
-            </h1>
-            <p 
-              className="mt-2 hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl transition duration-250" 
-              contentEditable
-              suppressContentEditableWarning={true}
-              onBlur={handleParagraphChange}
-            >
-              {paragraph}
-            </p>
-          </div>
-          <div className='flex flex-col gap-2 px-4 items-end'>
-            <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-zinc-950 text-yellow-300 w-fit'>
-              <FaTwitch />
-              <span className='font-semibold'>/astron</span>
-            </div>
-            <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-zinc-950 text-yellow-300'>
-              <FaDiscord />
-              <span className='font-semibold'>/astronomiquedeouf</span>
-            </div>
-          </div>
-        </div>
+      <div ref={divRef} className="bg-gradient-to-r from-red-300 to-amber-200 rounded-xl p-4 text-zinc-950">
+      <h1 
+          className="text-2xl font-bold hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl text-center transition duration-250" 
+          contentEditable
+          suppressContentEditableWarning={true}
+          onBlur={handleHeaderChange}
+        >
+          {header}
+        </h1>
+        <p 
+          className="mt-2 hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl text-center transition duration-250" 
+          contentEditable
+          suppressContentEditableWarning={true}
+          onBlur={handleParagraphChange}
+        >
+          {paragraph}
+        </p>
         <div className="grid grid-cols-4 grid-rows-2 gap-4 min-h-screen p-4">
             {cards.map((card, index) => (
             <Card
