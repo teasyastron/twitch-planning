@@ -4,6 +4,8 @@ import Card from './Card';
 import { TbScreenshot } from "react-icons/tb";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { FaInstagram, FaTwitch } from "react-icons/fa";
+import { FaCloud } from 'react-icons/fa6';
+import { WiStars } from 'react-icons/wi';
 
 const Home = () => {
   const initialCardState = {
@@ -134,7 +136,6 @@ const Home = () => {
 
         </div>
 
-
         <div className="grid grid-cols-4 grid-rows-2 gap-4 min-h-screen p-4">
             {cards.map((card, index) => (
             <Card
@@ -147,6 +148,7 @@ const Home = () => {
             />
           ))}
         </div>
+
       </div>
     </div>
   );
