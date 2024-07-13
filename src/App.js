@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="min-h-screen bg-zinc-950 text-white">
+      <div className="min-h-screen bg-zinc-950 text-white select-none">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
