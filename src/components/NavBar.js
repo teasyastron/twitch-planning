@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo';
+import { FaHeart } from 'react-icons/fa';
 
 const NavBar = () => {
   return (
@@ -19,17 +20,18 @@ const NavBar = () => {
               <Link to="/themes" className="text-white hover:text-gray-300">Other Themes</Link>
             </li>
             <li>
-              <a href="https://github.com" className="text-white hover:text-gray-300">Github</a>
+              <a href="https://github.com/teasyastron/twitch-planning" className="text-white hover:text-gray-300">Github</a>
             </li>
           </ul>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-1 bg-white bg-opacity-20 border border-white border-opacity-30 px-4 py-1 text-sm rounded-xl">
+          Made with <FaHeart /> by
           <img
             src="http://astron.rf.gd/uploads/1720464311_f7fc66781743adde.png" // Replace with actual avatar URL
             alt="User Avatar"
-            className="h-8 w-8 rounded-full mr-3"
+            className="h-6 w-6 rounded-full"
           />
-          <span className="text-white text-lg">astron</span>
+          <span className="text-white">astron</span>
         </div>
       </div>
     </nav>

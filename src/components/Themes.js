@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Themes = () => {
-  const themes = ['red', 'katertot', 'theme3', 'theme4']; // Add more themes as needed
+  const themes = ['katertot']; // Add more themes as needed
   const [selectedTheme, setSelectedTheme] = useState(null);
   const [HomeComponent, setHomeComponent] = useState(null);
 
@@ -27,7 +27,7 @@ const Themes = () => {
             {themes.map((theme, index) => (
               <div 
                 key={index}
-                className="p-4 border rounded shadow cursor-pointer hover:bg-gray-200"
+                className="p-4 rounded-xl bg-purple-600 border-2 border-purple-300 cursor-pointer hover:bg-purple-500 transition duration-250"
                 onClick={() => handleThemeClick(theme)}
               >
                 <h2 className="text-lg font-semibold">{theme}</h2>
