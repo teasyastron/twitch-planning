@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo';
+import Astron from '../img/avatar.png'
 import { FaHeart } from 'react-icons/fa';
 
 const NavBar = () => {
@@ -27,7 +28,7 @@ const NavBar = () => {
         <div className="flex items-center gap-1 bg-white bg-opacity-20 border border-white border-opacity-30 px-4 py-1 text-sm rounded-xl">
           Made with <FaHeart /> by
           <img
-            src="../img/astron.png"
+            src={Astron}
             className="h-6 w-6 rounded-full"
           />
           <span className="text-white">astron</span>
