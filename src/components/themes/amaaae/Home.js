@@ -3,6 +3,8 @@ import { toPng } from 'html-to-image';
 import Card from './Card'; // Ensure Card is correctly imported
 import { TbScreenshot } from "react-icons/tb";
 import { FaTwitch } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa6";
+
 
 const Home = () => {
   const initialCardState = {
