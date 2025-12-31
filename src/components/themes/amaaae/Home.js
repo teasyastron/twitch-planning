@@ -76,34 +76,22 @@ const Home = () => {
         <TbScreenshot />
         Exporter le planning
       </button>
-      <div ref={divRef} className="bg-gradient-to-r from-red-300 to-amber-200 rounded-xl p-4 text-zinc-950">
+      <div ref={divRef} className="bg-gradient-to-r from-pink-300 to-rose-400 rounded-xl p-4 text-zinc-950">
               <div className='flex items-center justify-between'>
                 <div>
                   <h1 
-                    className="text-5xl font-bold lowercase hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl transition duration-250" 
+                    className="text-5xl font-bold hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl transition duration-250" 
                     contentEditable
                     suppressContentEditableWarning={true}
                     onBlur={handleHeaderChange}
                   >
                     {header}
                   </h1>
-                  <p 
-                    className="mt-2 hover:bg-white hover:bg-opacity-40 px-4 py-3 rounded-xl transition duration-250" 
-                    contentEditable
-                    suppressContentEditableWarning={true}
-                    onBlur={handleParagraphChange}
-                  >
-                    {paragraph}
-                  </p>
                 </div>
                 <div className='flex flex-col gap-2 px-4 items-end'>
-                  <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-zinc-950 text-yellow-300 w-fit'>
+                  <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-pink-300 text-gray-200 w-fit'>
                     <FaTwitch />
-                    <span className='font-semibold'>/astronnnnnnnn</span>
-                  </div>
-                  <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-zinc-950 text-yellow-300'>
-                    <FaDiscord />
-                    <span className='font-semibold'>astronomique</span>
+                    <span className='font-semibold'>/amaaae</span>
                   </div>
                 </div>
               </div>       
