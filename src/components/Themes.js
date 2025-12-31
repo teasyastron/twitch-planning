@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Themes = () => {
-  const themes = ['katertot']; // Add more themes as needed
+  const themes = ['amaaae']; // Add more themes as needed
   const [selectedTheme, setSelectedTheme] = useState(null);
   const [HomeComponent, setHomeComponent] = useState(null);
 
