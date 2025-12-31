@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
 import Card from './Card'; // Ensure Card is correctly imported
 import { TbScreenshot } from "react-icons/tb";
+import { FaTwitch } from "react-icons/fa";
 
 const Home = () => {
   const initialCardState = {
