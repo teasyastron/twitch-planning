@@ -15,7 +15,7 @@ const Home = () => {
   };
 
   const days = ['monday', 'tuesday', 'wednesday', 'sunday', 'thursday', 'friday', 'saturday'];
-  const [header, setHeader] = useState("Streaming Schedule __/__/___");
+  const [header, setHeader] = useState("Planning __/__/___");
   const [paragraph, setParagraph] = useState("Quick description of the activities this week.");
 
 
