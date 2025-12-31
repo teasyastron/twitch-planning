@@ -9,8 +9,8 @@ import { FaDiscord } from "react-icons/fa6";
 const Home = () => {
   const initialCardState = {
     day: 'lundi',
-    time: '9 PM',
-    game: 'phasmophobia',
+    time: '21:00',
+    game: 'valorant',
     stream: false,
     more: false,
     bgmore: 'purple',
