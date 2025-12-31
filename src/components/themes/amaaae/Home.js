@@ -76,7 +76,7 @@ const Home = () => {
         <TbScreenshot />
         Exporter le planning
       </button>
-      <div ref={divRef} className="bg-gradient-to-r from-pink-300 to-rose-400 rounded-xl p-4 text-zinc-950">
+      <div ref={divRef} className="bg-gradient-to-r from-pink-300 to-rose-300 rounded-xl p-4 text-zinc-950">
               <div className='flex items-center justify-between'>
                 <div>
                   <h1 
@@ -89,7 +89,7 @@ const Home = () => {
                   </h1>
                 </div>
                 <div className='flex flex-col gap-2 px-4 items-end'>
-                  <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-pink-300 text-gray-200 w-fit'>
+                  <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-pink-400 text-gray-200 w-fit'>
                     <FaTwitch />
                     <span className='font-semibold'>/amaaae</span>
                   </div>
