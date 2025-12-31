@@ -14,7 +14,7 @@ const Home = () => {
     textmore: 'What are you doing on stream?',
   };
 
-  const days = ['monday', 'tuesday', 'wednesday', 'sunday', 'thursday', 'friday', 'saturday'];
+  const days = ['lundi', 'mardi', 'mercredi', 'dimanche', 'jeudi', 'vendredi', 'samedi'];
   const [header, setHeader] = useState("Planning __/__/___");
   const [paragraph, setParagraph] = useState("Quick description of the activities this week.");
 
