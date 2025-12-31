@@ -99,11 +99,11 @@ const Home = () => {
           <div className='flex flex-col gap-2 px-4 items-end'>
             <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-zinc-950 text-yellow-300 w-fit'>
               <FaTwitch />
-              <span className='font-semibold'>/astron</span>
+              <span className='font-semibold'>/astronnnnnnnn</span>
             </div>
             <div className='flex gap-2 justify-center items-center text-lg px-4 py-2 rounded-xl bg-zinc-950 text-yellow-300'>
               <FaDiscord />
-              <span className='font-semibold'>/astronomiquedeouf</span>
+              <span className='font-semibold'>astronomique</span>
             </div>
           </div>
         </div>
