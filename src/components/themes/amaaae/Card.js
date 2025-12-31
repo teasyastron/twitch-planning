@@ -1,5 +1,4 @@
 import React from 'react';
-import games from "../../Games";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 import { FaVideoSlash } from "react-icons/fa";
@@ -22,7 +21,7 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave}
     >
-      <div className='relative rounded-xl overflow-hidden h-full shadow-[4px_4px_0px_0px_#FFFFFF]'>
+      <div className='relative rounded-xl overflow-hidden h-full'>
         <div className="absolute inset-0">
           <img
             src={cardInfo.stream ? bg : offline}
@@ -30,7 +29,7 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative bg-gradient-to-b from-zinc-900 to-transparent p-4 text-rose-300 h-full">
+        <div className="relative bg-gradient-to-b from-zinc-900 to-transparent p-4 text-red-300 h-full">
           <h1 className="text-4xl font-bold flex items-baseline gap-2">
             <span className="text-xl"><FaCalendarAlt /></span>
             {cardInfo.day}
@@ -42,11 +41,11 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
                 </p>
                 : ''}
 
-          <div className='h-1/2 mt-2 flex flex-col justify-center items-center'>
+          <div className='h-1/2 flex flex-col justify-center items-center'>
           {cardInfo.stream ? 
             <img 
               src={logo}
-              className="w-4/6"
+              className="w-5/6"
             />
           : <span className='text-5xl mt-16'><FaVideoSlash /></span>
           }
@@ -66,24 +65,24 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
         <div className="absolute top-0 left-0 p-4 bg-zinc-950 rounded-xl shadow-lg text-gray-300 h-full w-full">
           <form>
             <div className='flex gap-2 mb-4 hidden'>
-              <label className='flex gap-1 items-center uppercase font-semibold'><FaCalendarAlt /> Day</label>
+              <label className='flex gap-1 items-center uppercase font-semibold'><FaCalendarAlt /> Jour</label>
               <select 
                 name="day" 
                 value={cardInfo.day} 
                 onChange={handleChange}
                 className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               >
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
+                <option value="lundi">Lundi</option>
+                <option value="mardi">Mardi</option>
+                <option value="mercredi">Mercredi</option>
+                <option value="jeudi">Jeudi</option>
+                <option value="vendredi">Vendredi</option>
+                <option value="samedi">Samedi</option>
+                <option value="dimanche">Dimanche</option>
               </select>
             </div>
             <div className='flex gap-2 mb-4'>
-              <label className='flex gap-1 items-center uppercase font-semibold'><FaClock />Time</label>
+              <label className='flex gap-1 items-center uppercase font-semibold'><FaClock />Heure</label>
               <input 
                 type="text" 
                 name="time" 
@@ -93,16 +92,16 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
               />
             </div>
             <div className='flex gap-2 mb-4'>
-              <label className='flex gap-1 items-center uppercase font-semibold'><IoGameController />Game</label>
+              <label className='flex gap-1 items-center uppercase font-semibold'><IoGameController />Jeu</label>
               <select 
                 name="game" 
                 value={cardInfo.game} 
                 onChange={handleChange}
                 className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               >
-                {games.map((game, index) => (
-                  <option key={index} value={game.value}>{game.label}</option>
-                ))}
+                <option value="phasmophobia">Phasmophobia</option>
+                <option value="fortnite">Fortnite</option>
+                <option value="manofmedan">Man of Medan</option>
               </select>
             </div>
             <div className='flex gap-4'>
@@ -116,7 +115,7 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
                 />
               </div>
               <div className='flex gap-2 mb-4'>
-                <label className='flex gap-1 items-center uppercase font-semibold'><FaLightbulb />More info</label>
+                <label className='flex gap-1 items-center uppercase font-semibold'><FaLightbulb />Plus d'infos</label>
                 <input 
                   type="checkbox" 
                   name="more" 
@@ -126,20 +125,20 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
               </div>
             </div>
             <div className='flex gap-2 mb-4'>
-              <label className='flex gap-1 items-center uppercase font-semibold'><FaPaintRoller />Background</label>
+              <label className='flex gap-1 items-center uppercase font-semibold'><FaPaintRoller />Arrière-plan</label>
               <select 
                 name="bgmore" 
                 value={cardInfo.bgmore} 
                 onChange={handleChange}
                 className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               >
-                <option value="purple">Purple</option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
+                <option value="purple">Violet</option>
+                <option value="red">Rouge</option>
+                <option value="green">Vert</option>
               </select>
             </div>
             <div className='flex gap-2 mb-4'>
-              <label className='flex gap-1 items-center uppercase font-semibold'><MdShortText />Label</label>
+              <label className='flex gap-1 items-center uppercase font-semibold'><MdShortText />Texte</label>
               <input 
                 type="text" 
                 name="textmore" 
