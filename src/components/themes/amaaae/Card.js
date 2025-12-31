@@ -1,4 +1,5 @@
 import React from 'react';
+import games from "../../Games";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 import { FaVideoSlash } from "react-icons/fa";
@@ -21,7 +22,7 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave}
     >
-      <div className='relative rounded-xl overflow-hidden h-full'>
+      <div className='relative rounded-xl overflow-hidden h-full shadow-[4px_4px_0px_0px_#FFFFFF]'>
         <div className="absolute inset-0">
           <img
             src={cardInfo.stream ? bg : offline}
@@ -29,7 +30,7 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative bg-gradient-to-b from-zinc-900 to-transparent p-4 text-red-300 h-full">
+        <div className="relative bg-gradient-to-b from-zinc-900 to-transparent p-4 text-rose-300 h-full">
           <h1 className="text-4xl font-bold flex items-baseline gap-2">
             <span className="text-xl"><FaCalendarAlt /></span>
             {cardInfo.day}
@@ -41,11 +42,11 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
                 </p>
                 : ''}
 
-          <div className='h-1/2 flex flex-col justify-center items-center'>
+          <div className='h-1/2 mt-2 flex flex-col justify-center items-center'>
           {cardInfo.stream ? 
             <img 
               src={logo}
-              className="w-5/6"
+              className="w-4/6"
             />
           : <span className='text-5xl mt-16'><FaVideoSlash /></span>
           }
@@ -99,9 +100,9 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
                 onChange={handleChange}
                 className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               >
-                <option value="phasmophobia">Phasmophobia</option>
-                <option value="fortnite">Fortnite</option>
-                <option value="manofmedan">Man of Medan</option>
+                {games.map((game, index) => (
+                  <option key={index} value={game.value}>{game.label}</option>
+                ))}
               </select>
             </div>
             <div className='flex gap-4'>
