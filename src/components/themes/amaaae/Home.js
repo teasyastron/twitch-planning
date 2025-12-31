@@ -5,7 +5,7 @@ import { TbScreenshot } from "react-icons/tb";
 
 const Home = () => {
   const initialCardState = {
-    day: 'monday',
+    day: 'lundi',
     time: '9 PM',
     game: 'phasmophobia',
     stream: false,
