@@ -10,7 +10,7 @@ const Home = () => {
   const initialCardState = {
     day: 'lundi',
     time: '21:00',
-    game: 'valorant',
+    game: 'val',
     stream: false,
     more: false,
     bgmore: 'purple',
