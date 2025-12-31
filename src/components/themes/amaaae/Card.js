@@ -18,7 +18,7 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
 
   return (
     <div 
-      className={`relative ${cardInfo.day === 'sunday' ? 'row-span-2' : ''}`}
+      className={`relative ${cardInfo.day === 'dimanche' ? 'row-span-2' : ''}`}
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave}
     >
