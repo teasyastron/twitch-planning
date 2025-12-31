@@ -73,7 +73,7 @@ const Card = ({ cardInfo, isHovered, handleMouseEnter, handleMouseLeave, handleC
                 onChange={handleChange}
                 className="rounded-md bg-zinc-900 outline-4 outline-purple-600 focus:outline-4 focus:outline-purple-600 active:outline-4 active:outline-purple-600 focus-visible:outline-4 focus-visible:outline-purple-600 p-2"
               >
-                <option value="monday">Monday</option>
+                <option value="lundi">Monday</option>
                 <option value="tuesday">Tuesday</option>
                 <option value="wednesday">Wednesday</option>
                 <option value="thursday">Thursday</option>
