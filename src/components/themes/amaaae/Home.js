@@ -95,8 +95,7 @@ const Home = () => {
               <FaTwitch />
               <span className='font-semibold'>/amaaae</span>
             </div>
-          </div>
-        </div>        
+          </div>        
         <div className="grid grid-cols-4 grid-rows-2 gap-4 min-h-screen p-4">
             {cards.map((card, index) => (
             <Card
